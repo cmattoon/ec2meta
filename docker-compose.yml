@@ -1,0 +1,8 @@
+version: '3'
+services:
+  169-254-169-254:
+    image: cmattoon/ec2meta:latest
+    build:
+      context: .
+    volumes:
+      - ./meta:/meta

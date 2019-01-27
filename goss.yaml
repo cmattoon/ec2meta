@@ -1,0 +1,28 @@
+package:
+  lighttpd:
+    installed: true
+process:
+  lighttpd:
+    running: true
+port:
+  tcp:80:
+    listening: true
+    ip:
+      - 0.0.0.0
+file:
+  /app/lighttpd.conf:
+    exists: true
+  /meta:
+    exists: true
+  /meta/latest:
+    exists: true
+  /meta/latest/meta-data:
+    exists: true
+
+http:
+  http://localhost/latest/meta-data/ami-id:
+    status: 200
+    body:
+      - ami-12345678
+
+  
